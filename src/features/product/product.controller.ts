@@ -1,17 +1,31 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
+import { ApiOkResponse } from "@nestjs/swagger";
 
+import { ProductDto } from "./dto/product.dto.js";
 import { CreateProductDto } from "./dto/create.product.dto.js";
 import { FilterProductDto } from "./dto/filter.product.dto.js";
 
 @Controller()
 export class ProductController {
     @Get()
-    public getList(@Body() filter: FilterProductDto): string {
-        return "";
+    @ApiOkResponse({ type: [ProductDto] })
+    public getList(@Body() filter: FilterProductDto): ProductDto[] {
+        return [
+            {
+                name: "Samsung Smartphone",
+                brand: "Samsung",
+                model: "A52g"
+            }
+        ];
     }
 
     @Post()
-    public createUser(@Body() input: CreateProductDto): string {
-        return "";
+    @ApiOkResponse({ type: ProductDto })
+    public createUser(@Body() input: CreateProductDto): ProductDto {
+        return {
+            name: "Samsung Smartphone",
+            brand: "Samsung",
+            model: "A52g"
+        };
     }
 }
