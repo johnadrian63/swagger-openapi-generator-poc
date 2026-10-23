@@ -1,7 +1,7 @@
 import { execFileSync } from "node:child_process";
 
 const SWAGGER_JSON_URL = process.env.SWAGGER_JSON_URL;
-const MODEL_PATH = "src/shared/api";
+const MODEL_PATH = "shared/api";
 
 execFileSync('npx', [
     "openapi-generator-cli",

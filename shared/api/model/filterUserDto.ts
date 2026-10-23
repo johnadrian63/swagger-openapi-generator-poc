@@ -9,18 +9,9 @@
  */
 
 
-export interface CreateCatDto { 
-    /**
-     * First name of the user
-     */
+export interface FilterUserDto { 
+    ids: string;
     firstName: string;
-    /**
-     * Last name of the user
-     */
     lastName: string;
-    /**
-     * Age of the user
-     */
-    age: number;
 }
 
