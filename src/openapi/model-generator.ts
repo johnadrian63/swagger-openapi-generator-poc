@@ -4,7 +4,7 @@ execFileSync('npx', [
     "openapi-generator-cli",
     "generate",
     "-i",
-    "http://localhost:3000/api-json",
+    `${process.env.SWAGGER_JSON_URL}`,
     "-g",
     "typescript-angular",
     "-o",

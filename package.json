@@ -20,8 +20,7 @@
     "test:cov": "vitest run --coverage",
     "test:debug": "vitest --inspect-brk --no-file-parallelism",
     "test:e2e": "vitest run --config ./vitest.config.e2e.ts",
-    "generate-models-with-cli": "openapi-generator-cli generate -i http://localhost:3000/api-json -g typescript-angular -o src/shared/models/api --global-property=models",
-    "generate-models-with-script": "node src/openapi/model-generator.ts"
+    "generate-models": "node --env-file=.env.local src/openapi/model-generator.ts"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",
